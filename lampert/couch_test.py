@@ -22,6 +22,4 @@ class CouchTest(object):
             agg_result.add_result(self.spec())
             iterations -= 1
 
-        print agg_result
-
         return agg_result
