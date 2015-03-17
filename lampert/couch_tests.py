@@ -20,3 +20,14 @@ def all_docs(database, params):
         elapsed=resp.elapsed,
         test='all_docs'
     )
+
+def view(database, params, view):
+    resp = requests.get("{database}/{view}".format(database=database, view=view),
+                        params=params)
+    return Result(
+        database=database,
+        params=params,
+        elapsed=resp.elapsed,
+        test='view'
+    )
+

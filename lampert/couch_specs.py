@@ -19,3 +19,10 @@ class CouchAllDocsSpec(CouchSpec):
 
     def __call__(self):
         return all_docs(self.database, self.params)
+
+class CouchViewSpec(CouchSpec):
+    view = jo.StringProperty(required=True)
+
+    def __call__(self):
+        return view(self.database, self.params, self.view)
+

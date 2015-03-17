@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 from lampert.couch_test import CouchTest
-from lampert.couch_specs import CouchReadSpec, CouchAllDocsSpec
+from lampert.couch_specs import CouchReadSpec, CouchAllDocsSpec, CouchViewSpec
 
 class Suite:
     def __init__(self, name, slug, tests):
@@ -14,6 +14,8 @@ class Suite:
                 self.tests.append(CouchTest(test['test'], spec=CouchReadSpec(**test)))
             elif test['test'] == 'all_docs':
                 self.tests.append(CouchTest(test['test'], spec=CouchAllDocsSpec(**test)))
+            elif test['test'] == 'view':
+                self.tests.append(CouchTest(test['test'], spec=CouchViewSpec(**test)))
 
     def run(self):
         results = []
