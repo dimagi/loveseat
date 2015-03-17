@@ -1,0 +1,15 @@
+{
+    "suite": "Example Suite",
+    "slug": "example_suite",
+    "tests": [
+        {
+            "test": "read", // (view|read|bulk_read|write|bulk_write)
+            "databases": [
+                'http://localhost:5984/commcarehq'
+                ],
+            "params": {}, // Optional params to be appended to couchdb
+            "repeat": [10, 50, 100], // How many times do you want this test run?
+            "ids": ['000044b370b24e98b31e6191aee240c5'] // For read tests. Determines which docs to do reads on
+        }
+    ]
+}
