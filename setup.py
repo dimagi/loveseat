@@ -1,9 +1,9 @@
 from __future__ import absolute_import
 
 try:
-    from setuptools import setup
+    from setuptools import setup, find_packages
 except ImportError:
-    from distutils.core import setup
+    from distutils.core import setup, find_packages
 
 import loveseat
 
@@ -15,6 +15,7 @@ setup(
     author_email='dev@dimagi.com',
     url='http://github.com/dimagi/loveseat',
     license=loveseat.__licence__,
+    packages=find_packages(),
     entry_points={
         'console_scripts': [
             'loveseat = loveseat.__main__:main'

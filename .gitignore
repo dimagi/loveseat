@@ -1,3 +1,4 @@
 *.pyc
 dist
 loveseat.egg-info
+build
