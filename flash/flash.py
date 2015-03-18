@@ -1,10 +1,10 @@
 from __future__ import absolute_import
 import argparse
 
-from lampert.test_runner import TestRunner
+from flash.test_runner import TestRunner
 
 def main():
-    from lampert.cli import parser
+    from flash.cli import parser
     args = parser.parse_args()
 
     runner = TestRunner(args.suitefile)

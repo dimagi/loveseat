@@ -1,6 +1,6 @@
 from __future__ import absolute_import
-from lampert.couch_test import CouchTest
-from lampert.couch_specs import CouchReadSpec, CouchAllDocsSpec, CouchViewSpec
+from flash.couch_test import CouchTest
+from flash.couch_specs import CouchReadSpec, CouchAllDocsSpec, CouchViewSpec
 
 class Suite:
     def __init__(self, name, slug, tests):

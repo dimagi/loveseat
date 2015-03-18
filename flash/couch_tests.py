@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 import requests
-from lampert.result import Result
+from flash.result import Result
 
 def read(database, params, id):
 

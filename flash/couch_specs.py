@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 import jsonobject as jo
-from lampert.couch_tests import read, all_docs, view
+from flash.couch_tests import read, all_docs, view
 
 class CouchSpec(jo.JsonObject):
     test = jo.StringProperty(required=True)
