@@ -3,14 +3,21 @@ try:
 except ImportError:
     from distutils.core import setup
 
+import loveseat
+
 setup(
     name='loveseat',
-    version='0.0.1',
+    version=loveseat.__version__,
     description='Benchmark library for testing CouchDB',
-    author='Dimagi',
+    author=loveseat.__author__,
     author_email='dev@dimagi.com',
     url='http://github.com/dimagi/loveseat',
-    license='MIT',
+    license=loveseat.__licence__,
+    entry_points={
+        'console_scripts': [
+            'loveseat = loveseat.__main__:main'
+        ]
+    },
     install_requires=[
         'requests',
         'clint',
