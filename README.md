@@ -77,3 +77,5 @@ You can view an example in `tests/data/test_suite.json`
 - More metrics
 - 'write' tests
 - Better test coverage
+- Sensible error handling
+- Weird behavior when sending loads of requests at once
