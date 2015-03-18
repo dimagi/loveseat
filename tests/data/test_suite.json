@@ -7,6 +7,9 @@
             "database": "http://localhost:5984/commcarehq",
             "params": {},
             "repeat": 100,
+            "headers": {
+                "silly": "header"
+            },
             "ids": ["000382ba-386f-4757-a80b-8a8aa62eec97"]
         },
         {

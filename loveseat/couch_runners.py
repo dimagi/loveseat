@@ -3,9 +3,11 @@ import requests
 from loveseat.result import Result
 
 
-def read(database, params, id):
-
-    resp = requests.get(database, params=params)
+def read(database, id, **kwargs):
+    params = kwargs.get('params', {})
+    resp = requests.get(database,
+                        params=params,
+                        headers=kwargs.get('headers', {}))
     return Result(
         database=database,
         params=params,
@@ -14,8 +16,11 @@ def read(database, params, id):
     )
 
 
-def all_docs(database, params):
-    resp = requests.get("{database}/_all_docs".format(database=database), params=params)
+def all_docs(database, **kwargs):
+    params = kwargs.get('params', {})
+    resp = requests.get("{database}/_all_docs".format(database=database),
+                        params=params,
+                        headers=kwargs.get('headers', {}))
     return Result(
         database=database,
         params=params,
@@ -24,9 +29,11 @@ def all_docs(database, params):
     )
 
 
-def view(database, params, view):
+def view(database, view, **kwargs):
+    params = kwargs.get('params', {})
     resp = requests.get("{database}/{view}".format(database=database, view=view),
-                        params=params)
+                        params=params,
+                        headers=kwargs.get('headers', {}))
     return Result(
         database=database,
         params=params,
