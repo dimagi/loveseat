@@ -71,3 +71,9 @@ Below is a generic template for a suite:
 ```
 
 You can view an example in `tests/data/test_suite.json`
+
+## Roadmap
+
+- More metrics
+- 'write' tests
+- Better test coverage
