@@ -1,0 +1,36 @@
+{
+    "suite": "Example Suite",
+    "slug": "example_suite",
+    "tests": [
+        {
+            "test": "read",
+            "database": "http://localhost:5984/commcarehq",
+            "params": {},
+            "repeat": 100,
+            "ids": ["000382ba-386f-4757-a80b-8a8aa62eec97"]
+        },
+        {
+            "test": "read",
+            "database": "http://localhost:5984/commcarehq",
+            "params": {},
+            "repeat": 100,
+            "ids": ["000044b370b24e98b31e6191aee240c5"]
+        },
+        {
+            "test": "all_docs",
+            "database": "http://localhost:5984/commcarehq",
+            "params": {
+                "startkey": "000044b370b24e98b31e6191aee240c5",
+                "endkey": "000382ba-386f-4757-a80b-8a8aa62eec97"
+            },
+            "repeat": 10
+        },
+        {
+            "test": "view",
+            "database": "http://localhost:5984/commcarehq",
+            "params": {},
+            "repeat": 10,
+            "view": "_design/app_manager/_view/applications"
+        }
+    ]
+}
