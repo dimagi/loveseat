@@ -1,3 +1,5 @@
+from __future__ import absolute_import
+
 try:
     from setuptools import setup
 except ImportError:
@@ -21,6 +23,7 @@ setup(
     install_requires=[
         'requests',
         'clint',
-        'jsonobject'
+        'jsonobject',
+        'simplejson',
     ],
 )
