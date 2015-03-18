@@ -28,6 +28,7 @@ Below is a generic template for a suite:
             "test": "read", // (view|read|all_docs)
             "database": "http://localhost:5984/commcarehq" // database to run tests against
             "params": {}, // Optional params to be appended to couchdb url
+            "headers": {}, // Any headers you wish to send along with the request
             "repeat": 100, // Number of times this test is run
             ... // Other args depending on the test
         }
