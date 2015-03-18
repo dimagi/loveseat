@@ -8,6 +8,7 @@ class CouchSpec(jo.JsonObject):
     database = jo.StringProperty(required=True)
     repeat = jo.IntegerProperty(default=10)
     params = jo.base.DefaultProperty()
+    headers = jo.base.DefaultProperty()
 
 
 class CouchReadSpec(CouchSpec):
@@ -15,17 +16,17 @@ class CouchReadSpec(CouchSpec):
     ids = jo.ListProperty(required=True)
 
     def __call__(self):
-        return read(self.database, self.params, self.ids)
+        return read(self.database, self.ids, params=self.params, headers=self.headers)
 
 
 class CouchAllDocsSpec(CouchSpec):
 
     def __call__(self):
-        return all_docs(self.database, self.params)
+        return all_docs(self.database, params=self.params)
 
 
 class CouchViewSpec(CouchSpec):
     view = jo.StringProperty(required=True)
 
     def __call__(self):
-        return view(self.database, self.params, self.view)
+        return view(self.database, self.view, params=self.params, headers=self.headers)
