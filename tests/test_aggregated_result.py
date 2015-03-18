@@ -1,8 +1,8 @@
 from __future__ import absolute_import
 import unittest
 from datetime import timedelta
-from flash.aggregated_result import AggregatedResult
-from flash.result import Result
+from loveseat.aggregated_result import AggregatedResult
+from loveseat.result import Result
 
 class TestAggregatedResult(unittest.TestCase):
 

@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 import requests
-from flash.result import Result
+from loveseat.result import Result
 
 def read(database, params, id):
 

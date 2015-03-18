@@ -1,5 +1,5 @@
 from __future__ import absolute_import
-from flash.aggregated_result import AggregatedResult
+from loveseat.aggregated_result import AggregatedResult
 
 class CouchTest(object):
     def __init__(self, test, spec=None):

@@ -1,7 +1,7 @@
 from __future__ import absolute_import
 import unittest
 from os.path import abspath, dirname, join
-from flash.test_runner import TestRunner
+from loveseat.test_runner import TestRunner
 
 THISDIR = dirname(abspath(__file__))
 BASE_PATH = join(THISDIR, 'data')

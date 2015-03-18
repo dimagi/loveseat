@@ -3,7 +3,7 @@ from __future__ import division
 import simplejson
 from clint.textui import colored, puts, columns
 
-from flash.suite import Suite
+from loveseat.suite import Suite
 
 
 class TestRunner:
