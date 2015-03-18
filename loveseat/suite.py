@@ -2,6 +2,7 @@ from __future__ import absolute_import
 from loveseat.couch_test import CouchTest
 from loveseat.couch_specs import CouchReadSpec, CouchAllDocsSpec, CouchViewSpec
 
+
 class Suite:
     def __init__(self, name, slug, tests):
         self.name = name

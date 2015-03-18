@@ -2,6 +2,7 @@ from __future__ import absolute_import
 import requests
 from loveseat.result import Result
 
+
 def read(database, params, id):
 
     resp = requests.get(database, params=params)
@@ -12,6 +13,7 @@ def read(database, params, id):
         test='read'
     )
 
+
 def all_docs(database, params):
     resp = requests.get("{database}/_all_docs".format(database=database), params=params)
     return Result(
@@ -20,6 +22,7 @@ def all_docs(database, params):
         elapsed=resp.elapsed,
         test='all_docs'
     )
+
 
 def view(database, params, view):
     resp = requests.get("{database}/{view}".format(database=database, view=view),
@@ -30,4 +33,3 @@ def view(database, params, view):
         elapsed=resp.elapsed,
         test='view'
     )
-

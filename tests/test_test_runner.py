@@ -6,6 +6,7 @@ from loveseat.test_runner import TestRunner
 THISDIR = dirname(abspath(__file__))
 BASE_PATH = join(THISDIR, 'data')
 
+
 class TestTestRunner(unittest.TestCase):
     def setUp(self):
         self.suitefile = join(BASE_PATH, 'test_suite.json')

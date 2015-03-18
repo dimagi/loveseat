@@ -1,7 +1,7 @@
 from __future__ import absolute_import
-import argparse
 
 from loveseat.test_runner import TestRunner
+
 
 def main():
     from loveseat.cli import parser

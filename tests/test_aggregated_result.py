@@ -4,11 +4,12 @@ from datetime import timedelta
 from loveseat.aggregated_result import AggregatedResult
 from loveseat.result import Result
 
+
 class TestAggregatedResult(unittest.TestCase):
 
     def setUp(self):
-        self.resultOne = Result(elapsed=timedelta(0,0,2))
-        self.resultTwo = Result(elapsed=timedelta(0,0,4))
+        self.resultOne = Result(elapsed=timedelta(0, 0, 2))
+        self.resultTwo = Result(elapsed=timedelta(0, 0, 4))
 
     def test_aggregated_result(self):
         ag = AggregatedResult('example')
