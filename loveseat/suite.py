@@ -12,11 +12,11 @@ class Suite:
 
         for test in tests:
             if test['test'] == 'read':
-                self.tests.append(CouchTest(test['test'], spec=CouchReadSpec(**test)))
+                self.tests.append(CouchTest(test['test'], spec=CouchReadSpec(test)))
             elif test['test'] == 'all_docs':
-                self.tests.append(CouchTest(test['test'], spec=CouchAllDocsSpec(**test)))
+                self.tests.append(CouchTest(test['test'], spec=CouchAllDocsSpec(test)))
             elif test['test'] == 'view':
-                self.tests.append(CouchTest(test['test'], spec=CouchViewSpec(**test)))
+                self.tests.append(CouchTest(test['test'], spec=CouchViewSpec(test)))
 
     def run(self):
         results = []
