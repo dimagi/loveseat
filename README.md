@@ -87,7 +87,7 @@ Sometimes couch requires some extra parameters to connect to a database. Lovesea
     "test": "view",
     "databases": [
         "http://localhost:5984/commcarehq",
-        { "url": "http://another/db", "params": {...}, "headers": {...} }
+        { "url": "http://another/db", "params": {...}, "headers": {...}, "slug": "human name" }
     ]
     "params": {},
     "headers": {}

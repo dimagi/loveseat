@@ -9,7 +9,7 @@ def read(database, id, **kwargs):
                         params=params,
                         headers=kwargs.get('headers', {}))
     return Result(
-        database=database,
+        database=(kwargs.get('slug') or database),
         params=params,
         elapsed=resp.elapsed,
         test='read'
@@ -22,7 +22,7 @@ def all_docs(database, **kwargs):
                         params=params,
                         headers=kwargs.get('headers', {}))
     return Result(
-        database=database,
+        database=(kwargs.get('slug') or database),
         params=params,
         elapsed=resp.elapsed,
         test='all_docs'
@@ -35,7 +35,7 @@ def view(database, view, **kwargs):
                         params=params,
                         headers=kwargs.get('headers', {}))
     return Result(
-        database=database,
+        database=(kwargs.get('slug') or database),
         params=params,
         elapsed=resp.elapsed,
         test='view'

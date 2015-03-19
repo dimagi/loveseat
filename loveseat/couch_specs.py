@@ -5,6 +5,7 @@ from loveseat.couch_runners import read, all_docs, view
 
 class CouchDatabaseSpec(jo.JsonObject):
     url = jo.StringProperty(required=True)
+    slug = jo.StringProperty()
     params = jo.base.DefaultProperty()
     headers = jo.base.DefaultProperty()
 
@@ -27,10 +28,12 @@ class CouchSpec(jo.JsonObject):
                 'headers': (obj or kwargs).get('headers', {})
             }
             if isinstance(database, unicode) or isinstance(database, str):
-                spec.update({'url': database})
+                spec.update({'url': database, 'slug': database})
                 database_specs.append(spec)
             else:
                 spec.update(database)
+                if 'slug' not in spec:
+                    spec['slug'] = spec['url']
                 database_specs.append(spec)
 
         (obj or kwargs)['databases'] = database_specs
@@ -44,14 +47,14 @@ class CouchReadSpec(CouchSpec):
 
     def __call__(self):
         for db in self.databases:
-            yield read(db.url, self.ids, params=self.params, headers=self.headers)
+            yield read(db.url, self.ids, params=self.params, headers=self.headers, slug=db.slug)
 
 
 class CouchAllDocsSpec(CouchSpec):
 
     def __call__(self):
         for db in self.databases:
-            yield all_docs(db.url, params=self.params)
+            yield all_docs(db.url, params=self.params, slug=db.slug)
 
 
 class CouchViewSpec(CouchSpec):
@@ -59,4 +62,4 @@ class CouchViewSpec(CouchSpec):
 
     def __call__(self):
         for db in self.databases:
-            yield view(db.url, self.view, params=self.params, headers=self.headers)
+            yield view(db.url, self.view, params=self.params, headers=self.headers, slug=db.slug)
