@@ -3,25 +3,28 @@
     "slug": "example_suite",
     "tests": [
         {
+            "name": "test one",
             "test": "read",
-            "database": "http://localhost:5984/commcarehq",
+            "databases": ["http://localhost:5984/commcarehq", "http://localhost:5984/test_commcarehq"],
             "params": {},
-            "repeat": 100,
+            "repeat": 10,
             "headers": {
                 "silly": "header"
             },
             "ids": ["000382ba-386f-4757-a80b-8a8aa62eec97"]
         },
         {
+            "name": "test two",
             "test": "read",
-            "database": "http://localhost:5984/commcarehq",
+            "databases": ["http://localhost:5984/commcarehq"],
             "params": {},
-            "repeat": 100,
+            "repeat": 10,
             "ids": ["000044b370b24e98b31e6191aee240c5"]
         },
         {
+            "name": "test three",
             "test": "all_docs",
-            "database": "http://localhost:5984/commcarehq",
+            "databases": ["http://localhost:5984/commcarehq"],
             "params": {
                 "startkey": "000044b370b24e98b31e6191aee240c5",
                 "endkey": "000382ba-386f-4757-a80b-8a8aa62eec97"
@@ -29,8 +32,9 @@
             "repeat": 10
         },
         {
+            "name": "test four",
             "test": "view",
-            "database": "http://localhost:5984/commcarehq",
+            "databases": ["http://localhost:5984/commcarehq"],
             "params": {},
             "repeat": 10,
             "view": "_design/app_manager/_view/applications"

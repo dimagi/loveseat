@@ -3,3 +3,6 @@ clint==0.4.1
 jsonobject==0.6.1
 simplejson
 nose
+ndg-httpsclient>=0.3.3
+pyopenssl>=0.14
+pyasn1

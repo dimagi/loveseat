@@ -23,6 +23,9 @@ setup(
     },
     install_requires=[
         'requests',
+        'ndg-httpsclient',
+        'pyopenssl',
+        'pyasn1'
         'clint',
         'jsonobject',
         'simplejson',

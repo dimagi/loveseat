@@ -8,18 +8,14 @@ class CouchTest(object):
         self.spec = spec
 
     def agg_result(self):
-        return AggregatedResult(u'{} {} tests on {}'.format(
-            self.spec.repeat,
-            self.test,
-            self.spec.database)
-        )
+        return AggregatedResult(self.spec.name)
 
     def run(self):
         iterations = self.spec.repeat
         agg_result = self.agg_result()
 
-        while iterations > 0:
-            agg_result.add_result(self.spec())
+        while iterations:
+            agg_result.add_results(list(self.spec()))
             iterations -= 1
 
         return agg_result
