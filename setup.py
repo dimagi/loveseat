@@ -25,7 +25,7 @@ setup(
         'requests',
         'ndg-httpsclient',
         'pyopenssl',
-        'pyasn1'
+        'pyasn1',
         'clint',
         'jsonobject',
         'simplejson',
