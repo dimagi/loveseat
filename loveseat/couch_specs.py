@@ -47,14 +47,14 @@ class CouchReadSpec(CouchSpec):
 
     def __call__(self):
         for db in self.databases:
-            yield read(db.url, self.ids, params=self.params, headers=self.headers, slug=db.slug)
+            yield read(db.url, self.ids, params=self.params, headers=(db.headers or self.headers), slug=db.slug)
 
 
 class CouchAllDocsSpec(CouchSpec):
 
     def __call__(self):
         for db in self.databases:
-            yield all_docs(db.url, params=self.params, slug=db.slug)
+            yield all_docs(db.url, params=self.params, headers=(db.headers or self.headers), slug=db.slug)
 
 
 class CouchViewSpec(CouchSpec):
@@ -62,4 +62,4 @@ class CouchViewSpec(CouchSpec):
 
     def __call__(self):
         for db in self.databases:
-            yield view(db.url, self.view, params=self.params, headers=self.headers, slug=db.slug)
+            yield view(db.url, self.view, params=self.params, headers=(db.headers or self.headers), slug=db.slug)
